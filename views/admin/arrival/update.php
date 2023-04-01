@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Изменить поставку: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Поставки', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Изменить';
 ?>
 <div class="arrival-update">
 

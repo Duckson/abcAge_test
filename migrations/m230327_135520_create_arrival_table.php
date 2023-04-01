@@ -20,7 +20,7 @@ class m230327_135520_create_arrival_table extends Migration
             'price' => $this->integer()->notNull(),
             'date' => $this->date()->notNull()
         ]);
-        $this->addForeignKey('arrival_good_id', '{{%arrival}}', 'good_id', '{{%arrival}}', 'id');
+        $this->addForeignKey('arrival_good_id', '{{%arrival}}', 'good_id', '{{%good}}', 'id', 'CASCADE');
 
         $this->insert('{{%arrival}}', [
             'number' => '1',
@@ -85,7 +85,7 @@ class m230327_135520_create_arrival_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('good_id', '{{%arrival}}');
+        $this->dropForeignKey('arrival_good_id', '{{%arrival}}');
         $this->dropTable('{{%arrival}}');
     }
 }

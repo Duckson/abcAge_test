@@ -61,8 +61,9 @@ class OrderSearch extends Order
             'id' => $this->id,
             'good_id' => $this->good_id,
             'count' => $this->count,
-            'date' => $this->date,
         ]);
+
+        $query->andFilterWhere(['like', 'date', $this->date]);
 
         return $dataProvider;
     }

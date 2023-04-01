@@ -18,7 +18,7 @@ class m230327_152625_create_order_table extends Migration
             'count' => $this->integer()->notNull(),
             'date' => $this->date()->notNull()
         ]);
-        $this->addForeignKey('order_good_id', '{{%order}}', 'good_id', '{{%good}}', 'id');
+        $this->addForeignKey('order_good_id', '{{%order}}', 'good_id', '{{%good}}', 'id', 'CASCADE');
 
         for ($i = 1; $i <= 15; $i++){
             $this->insert('{{%order}}', [
